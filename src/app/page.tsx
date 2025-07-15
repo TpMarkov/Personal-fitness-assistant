@@ -4,8 +4,9 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Image } from "lucide-react";
 import TerminalOverlay from "@/components/TerminalOverlay";
+import Image from "next/image";
+import UserPrograms from "@/components/UserPrograms";
 
 const HomePage = () => {
   return (
@@ -114,6 +115,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+      <UserPrograms></UserPrograms>
     </div>
   );
 };

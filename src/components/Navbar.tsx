@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { SignIn, SignInButton, SignUpButton, useUser } from "@clerk/nextjs";
+import { SignInButton, SignUpButton, useUser } from "@clerk/nextjs";
 import Link from "next/link";
 import { DumbbellIcon, HomeIcon, UserIcon, ZapIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
