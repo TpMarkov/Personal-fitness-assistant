@@ -92,7 +92,7 @@ const GenerateProgramPage = () => {
     };
   }, []);
 
-  const togleCall = async () => {
+  const toggleCall = async () => {
     if (callActive) vapi.stop();
     else {
       try {
