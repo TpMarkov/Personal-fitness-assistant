@@ -21,7 +21,7 @@ http.route({
     const svix_timestamp = request.headers.get("svix-timestamp");
 
     if (!svix_id || !svix_signature || !svix_timestamp) {
-      return new Response("No svix hears found", { status: 400 });
+      return new Response("No svix headers found", { status: 400 });
     }
 
     const payload = await request.json();
@@ -62,6 +62,8 @@ http.route({
         return new Response("Error creating user", { status: 500 });
       }
     }
+
+    //  TODO: HANDLE THE user.update EVENT. LATER
 
     return new Response("Webhook processed successfully", { status: 200 });
   }),
