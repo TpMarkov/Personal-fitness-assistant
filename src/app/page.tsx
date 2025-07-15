@@ -88,7 +88,7 @@ const HomePage = () => {
               </div>
               {/* IMAGE CONTAINER */}
               <div className="relative aspect-square max-w-lg mx-auto">
-                <div className="relative overflow-hidden rounded-lg  bg-cyber-blakc">
+                <div className="relative overflow-hidden rounded-lg  bg-cyber-black">
                   <img
                     src="./hero-ai3.png"
                     alt="AI Fitness Couch"
