@@ -6,16 +6,18 @@ import { vapi } from "@/lib/vapi";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { useAuth } from "@clerk/nextjs";
 
 const GenerateProgramPage = () => {
   const [callActive, setCallActive] = useState(false);
   const [connecting, setConnecting] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
-  const [messages, setMessages] = useState<any[]>([]);
+  const [messages, setMessages] = useState([]);
   const [callEnded, setCallEnded] = useState(false);
 
   const { user } = useUser();
   const router = useRouter();
+  const { getToken } = useAuth();
 
   const messageContainerRef = useRef<HTMLDivElement>(null);
 
@@ -133,10 +135,13 @@ const GenerateProgramPage = () => {
           ? `${user.firstName} ${user.lastName || ""}`.trim()
           : "There";
 
+        const token = await getToken();
+
         await vapi.start(process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID!, {
           variableValues: {
             full_name: fullName,
             user_id: user?.id,
+            auth_token: token, // ✅ Pass the token here
           },
         });
       } catch (error) {
