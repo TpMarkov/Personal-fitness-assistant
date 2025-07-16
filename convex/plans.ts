@@ -7,7 +7,8 @@ export const createPlan = mutation({
     name: v.string(),
     workoutPlan: v.object({
       schedule: v.array(v.string()),
-      exercises: v.array(
+      exercise: v.array(
+        // 👈 use "exercise" to match the schema
         v.object({
           day: v.string(),
           routines: v.array(
@@ -43,11 +44,9 @@ export const createPlan = mutation({
     }
 
     const planId = await ctx.db.insert("plans", args);
-
     return planId;
   },
 });
-
 export const getUserPlans = query({
   args: { userId: v.string() },
   handler: async (ctx, args) => {
