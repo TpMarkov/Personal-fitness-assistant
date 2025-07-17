@@ -47,7 +47,7 @@
 ## 🛠️ Tech Stack
 
 - **Frontend**: React / Next.js  
-- **Backend**: Node.js / Express / MongoDB  
+- **Backend**: Node.js / Convex  
 - **AI Voice Assistant**: Vapi / OpenAI GPT  
 - **Authentication**: Clerk (or your auth solution)
 
